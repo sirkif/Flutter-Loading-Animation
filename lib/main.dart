@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'CircleOpacity.dart';
+import 'package:flutter_loading_animation/CircleGradual.dart';
 
 void main() {
   // debugPaintSizeEnabled = true;
@@ -13,7 +12,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Loading Animation',
-      home: CircleOpacity(),
+      home: Scaffold(
+        backgroundColor: Colors.black87,
+        body: CircleGradual(),
+      ),
     );
   }
 }

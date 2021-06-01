@@ -2,6 +2,8 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
+import 'CircleOpacityModel.dart';
+
 class CircleOpacity extends StatefulWidget {
   @override
   _CircleOpacityState createState() => _CircleOpacityState();
@@ -9,49 +11,51 @@ class CircleOpacity extends StatefulWidget {
 
 class _CircleOpacityState extends State<CircleOpacity>
     with TickerProviderStateMixin {
-  late AnimationController circleOpacityController;
-  late AnimationController circleRotationController;
-  late Animation<double> rotationAnimation;
-  late Animation<double> opacityAnimation;
-  late Animation<Offset> offsetAnimation;
-
-  Tween<double> tweenOpacity = Tween(begin: 1.0, end: 0.0);
-
-  Tween<Offset> tweenOffset =
-      Tween(begin: Offset(0.0, 0.0), end: Offset(55.0, 0.0));
-
   @override
   void initState() {
     super.initState();
 
-    circleOpacityController = AnimationController(
-      vsync: this,
-      duration: Duration(milliseconds: 1800),
-    );
-    circleRotationController = AnimationController(
+    CircleOpacityModel.circleOpacityController = AnimationController(
       vsync: this,
       duration: Duration(milliseconds: 1800),
     );
 
-    opacityAnimation = tweenOpacity.animate(circleOpacityController);
-    offsetAnimation = tweenOffset.animate(
-      CurvedAnimation(parent: circleOpacityController, curve: Curves.linear),
+    CircleOpacityModel.circleRotationController = AnimationController(
+      vsync: this,
+      duration: Duration(milliseconds: 1800),
     );
 
-    rotationAnimation = CurvedAnimation(
-      parent: circleRotationController,
+    CircleOpacityModel.opacityAnimation = CircleOpacityModel.tweenOpacity
+        .animate(CircleOpacityModel.circleOpacityController);
+
+    CircleOpacityModel.plusOffsetAnimation =
+        CircleOpacityModel.plusOffsetTween.animate(
+      CurvedAnimation(
+          parent: CircleOpacityModel.circleOpacityController,
+          curve: Curves.linear),
+    );
+
+    CircleOpacityModel.minusOffsetAnimation =
+        CircleOpacityModel.minusOffsetTween.animate(
+      CurvedAnimation(
+          parent: CircleOpacityModel.circleOpacityController,
+          curve: Curves.linear),
+    );
+
+    CircleOpacityModel.rotationAnimation = CurvedAnimation(
+      parent: CircleOpacityModel.circleRotationController,
       curve: Curves.linear,
     );
 
-    circleOpacityController.forward();
+    CircleOpacityModel.circleOpacityController.forward();
 
     Future.delayed(Duration(milliseconds: 1800), () {
-      circleRotationController.forward();
+      CircleOpacityModel.circleRotationController.forward();
     });
 
-    circleRotationController.addStatusListener((status) {
+    CircleOpacityModel.circleRotationController.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
-        circleRotationController.repeat();
+        CircleOpacityModel.circleRotationController.repeat();
       }
     });
   }
@@ -59,26 +63,24 @@ class _CircleOpacityState extends State<CircleOpacity>
   @override
   void dispose() {
     super.dispose();
-    circleOpacityController.dispose();
-    circleRotationController.dispose();
+    CircleOpacityModel.circleOpacityController.dispose();
+    CircleOpacityModel.circleRotationController.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.black87,
-      child: Center(
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            buildCircleOpacity(),
-            buildCircleRotation(),
-          ],
-        ),
+    return Center(
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          buildCircleOpacity(),
+          buildCircleRotation(),
+        ],
       ),
     );
   }
 
+  /////// Build Circle Opacity
   Stack buildCircleOpacity() {
     return Stack(
       alignment: Alignment.center,
@@ -88,95 +90,88 @@ class _CircleOpacityState extends State<CircleOpacity>
           height: 10,
           angle: -(pi / 4),
           colorOpacity: 0.15,
-          minusOffset: false,
-          offset: offsetAnimation,
-          opacityAnimation: opacityAnimation,
-          circleOpacityController: circleOpacityController,
+          offset: CircleOpacityModel.plusOffsetAnimation,
+          opacityAnimation: CircleOpacityModel.opacityAnimation,
+          circleOpacityController: CircleOpacityModel.circleOpacityController,
         ),
         CircleOpacityBuilder(
           width: 13,
           height: 13,
           angle: 0,
           colorOpacity: 0.2,
-          minusOffset: false,
-          offset: offsetAnimation,
-          opacityAnimation: opacityAnimation,
-          circleOpacityController: circleOpacityController,
+          offset: CircleOpacityModel.plusOffsetAnimation,
+          opacityAnimation: CircleOpacityModel.opacityAnimation,
+          circleOpacityController: CircleOpacityModel.circleOpacityController,
         ),
         CircleOpacityBuilder(
           width: 16,
           height: 16,
           angle: (pi / 4),
           colorOpacity: 0.3,
-          minusOffset: false,
-          offset: offsetAnimation,
-          opacityAnimation: opacityAnimation,
-          circleOpacityController: circleOpacityController,
+          offset: CircleOpacityModel.plusOffsetAnimation,
+          opacityAnimation: CircleOpacityModel.opacityAnimation,
+          circleOpacityController: CircleOpacityModel.circleOpacityController,
         ),
         CircleOpacityBuilder(
           width: 19,
           height: 19,
           angle: (pi / 2),
           colorOpacity: 0.4,
-          minusOffset: false,
-          offset: offsetAnimation,
-          opacityAnimation: opacityAnimation,
-          circleOpacityController: circleOpacityController,
+          offset: CircleOpacityModel.plusOffsetAnimation,
+          opacityAnimation: CircleOpacityModel.opacityAnimation,
+          circleOpacityController: CircleOpacityModel.circleOpacityController,
         ),
         CircleOpacityBuilder(
           width: 21,
           height: 21,
           angle: -(pi / 4),
           colorOpacity: 0.5,
-          minusOffset: true,
-          offset: offsetAnimation,
-          opacityAnimation: opacityAnimation,
-          circleOpacityController: circleOpacityController,
+          offset: CircleOpacityModel.minusOffsetAnimation,
+          opacityAnimation: CircleOpacityModel.opacityAnimation,
+          circleOpacityController: CircleOpacityModel.circleOpacityController,
         ),
         CircleOpacityBuilder(
           width: 24,
           height: 24,
           angle: 0,
           colorOpacity: 0.6,
-          minusOffset: true,
-          offset: offsetAnimation,
-          opacityAnimation: opacityAnimation,
-          circleOpacityController: circleOpacityController,
+          offset: CircleOpacityModel.minusOffsetAnimation,
+          opacityAnimation: CircleOpacityModel.opacityAnimation,
+          circleOpacityController: CircleOpacityModel.circleOpacityController,
         ),
         CircleOpacityBuilder(
           width: 27,
           height: 27,
           angle: (pi / 4),
           colorOpacity: 0.8,
-          minusOffset: true,
-          offset: offsetAnimation,
-          opacityAnimation: opacityAnimation,
-          circleOpacityController: circleOpacityController,
+          offset: CircleOpacityModel.minusOffsetAnimation,
+          opacityAnimation: CircleOpacityModel.opacityAnimation,
+          circleOpacityController: CircleOpacityModel.circleOpacityController,
         ),
         CircleOpacityBuilder(
           width: 30,
           height: 30,
           angle: -(pi / 2),
           colorOpacity: 1,
-          minusOffset: false,
-          offset: offsetAnimation,
-          opacityAnimation: opacityAnimation,
-          circleOpacityController: circleOpacityController,
+          offset: CircleOpacityModel.plusOffsetAnimation,
+          opacityAnimation: CircleOpacityModel.opacityAnimation,
+          circleOpacityController: CircleOpacityModel.circleOpacityController,
         ),
       ],
     );
   }
 
+  /////// Build Circle Rotation
   RotationTransition buildCircleRotation() {
     return RotationTransition(
-      turns: rotationAnimation,
+      turns: CircleOpacityModel.rotationAnimation,
       child: Stack(
         alignment: Alignment.center,
         children: [
           TransformRotateCircle(
             angle: -(pi / 4),
             offset: Offset(55.0, 0.0),
-            child: CircleShape(
+            child: CircleOpacityShape(
               width: 10,
               height: 10,
               colorOpacity: 0.15,
@@ -185,7 +180,7 @@ class _CircleOpacityState extends State<CircleOpacity>
           TransformRotateCircle(
             angle: 0,
             offset: Offset(55.0, 0.0),
-            child: CircleShape(
+            child: CircleOpacityShape(
               width: 13,
               height: 13,
               colorOpacity: 0.2,
@@ -194,7 +189,7 @@ class _CircleOpacityState extends State<CircleOpacity>
           TransformRotateCircle(
             angle: (pi / 4),
             offset: Offset(55.0, 0.0),
-            child: CircleShape(
+            child: CircleOpacityShape(
               width: 16,
               height: 16,
               colorOpacity: 0.3,
@@ -203,7 +198,7 @@ class _CircleOpacityState extends State<CircleOpacity>
           TransformRotateCircle(
             angle: (pi / 2),
             offset: Offset(55.0, 0.0),
-            child: CircleShape(
+            child: CircleOpacityShape(
               width: 19,
               height: 19,
               colorOpacity: 0.4,
@@ -212,7 +207,7 @@ class _CircleOpacityState extends State<CircleOpacity>
           TransformRotateCircle(
             angle: -(pi / 4),
             offset: Offset(-55.0, 0.0),
-            child: CircleShape(
+            child: CircleOpacityShape(
               width: 21,
               height: 21,
               colorOpacity: 0.5,
@@ -221,7 +216,7 @@ class _CircleOpacityState extends State<CircleOpacity>
           TransformRotateCircle(
             angle: 0,
             offset: Offset(-55.0, 0.0),
-            child: CircleShape(
+            child: CircleOpacityShape(
               width: 24,
               height: 24,
               colorOpacity: 0.6,
@@ -230,7 +225,7 @@ class _CircleOpacityState extends State<CircleOpacity>
           TransformRotateCircle(
             angle: (pi / 4),
             offset: Offset(-55.0, 0.0),
-            child: CircleShape(
+            child: CircleOpacityShape(
               width: 27,
               height: 27,
               colorOpacity: 0.8,
@@ -239,7 +234,7 @@ class _CircleOpacityState extends State<CircleOpacity>
           TransformRotateCircle(
             angle: -(pi / 2),
             offset: Offset(55.0, 0.0),
-            child: CircleShape(
+            child: CircleOpacityShape(
               width: 30,
               height: 30,
               colorOpacity: 1,
@@ -257,7 +252,6 @@ class CircleOpacityBuilder extends StatelessWidget {
   final double height;
   final double angle;
   final double colorOpacity;
-  final bool minusOffset;
   final Animation<Offset> offset;
   final Animation<double> opacityAnimation;
   final Listenable circleOpacityController;
@@ -267,7 +261,6 @@ class CircleOpacityBuilder extends StatelessWidget {
     required this.height,
     required this.angle,
     required this.colorOpacity,
-    required this.minusOffset,
     required this.offset,
     required this.opacityAnimation,
     required this.circleOpacityController,
@@ -279,14 +272,14 @@ class CircleOpacityBuilder extends StatelessWidget {
       opacity: opacityAnimation,
       child: AnimatedBuilder(
         animation: circleOpacityController,
-        child: CircleShape(
+        child: CircleOpacityShape(
           width: width,
           height: height,
           colorOpacity: colorOpacity,
         ),
         builder: (context, child) => TransformRotateCircle(
           angle: angle,
-          offset: minusOffset ? -offset.value : offset.value,
+          offset: offset.value,
           child: child!,
         ),
       ),
@@ -294,67 +287,7 @@ class CircleOpacityBuilder extends StatelessWidget {
   }
 }
 
-class CircleRotationBuilder extends StatelessWidget {
-  final double width;
-  final double height;
-  final double angle;
-  final double colorOpacity;
-  final bool minusOffset;
-  final Animation<Offset> offset;
-  final Listenable circleOpacityController;
-
-  const CircleRotationBuilder({
-    required this.width,
-    required this.height,
-    required this.angle,
-    required this.colorOpacity,
-    required this.minusOffset,
-    required this.offset,
-    required this.circleOpacityController,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return AnimatedBuilder(
-      animation: circleOpacityController,
-      child: CircleShape(
-        width: width,
-        height: height,
-        colorOpacity: colorOpacity,
-      ),
-      builder: (context, child) => TransformRotateCircle(
-        angle: angle,
-        offset: minusOffset ? -offset.value : offset.value,
-        child: child!,
-      ),
-    );
-  }
-}
-
-class CircleShape extends StatelessWidget {
-  final double width;
-  final double height;
-  final double colorOpacity;
-
-  const CircleShape({
-    required this.width,
-    required this.height,
-    required this.colorOpacity,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: width,
-      height: height,
-      decoration: BoxDecoration(
-        color: Color(0xFFFFF5AB).withOpacity(colorOpacity),
-        shape: BoxShape.circle,
-      ),
-    );
-  }
-}
-
+/////// Transform Rotate Circle
 class TransformRotateCircle extends StatelessWidget {
   final double angle;
   final Offset offset;
@@ -373,6 +306,31 @@ class TransformRotateCircle extends StatelessWidget {
       child: Transform.translate(
         offset: offset,
         child: child,
+      ),
+    );
+  }
+}
+
+/////// Circle Opacity Shape
+class CircleOpacityShape extends StatelessWidget {
+  final double width;
+  final double height;
+  final double colorOpacity;
+
+  const CircleOpacityShape({
+    required this.width,
+    required this.height,
+    required this.colorOpacity,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: width,
+      height: height,
+      decoration: BoxDecoration(
+        color: Color(0xFFFFF5AB).withOpacity(colorOpacity),
+        shape: BoxShape.circle,
       ),
     );
   }
