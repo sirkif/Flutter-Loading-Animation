@@ -11,83 +11,25 @@ class _CubeOffsetState extends State<CubeOffset> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
+
     CubeOffsetModel.cubeOffsetController = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 2),
+      duration: Duration(
+        seconds: 2,
+      ),
     );
+
     CubeOffsetModel.slideTransitionController = AnimationController(
       vsync: this,
       duration: Duration(milliseconds: 2000),
     );
 
-    /////// Yellow Cube
-    CubeOffsetModel.yellowCubeAnimation =
-        CubeOffsetModel.yellowTweenSequence.animate(
-      CurvedAnimation(
-        parent: CubeOffsetModel.cubeOffsetController,
-        curve: Curves.easeOutQuad,
-      ),
-    );
-    CubeOffsetModel.yellowSlideTransition =
-        CubeOffsetModel.yellowTweenSlide.animate(
-      CurvedAnimation(
-        parent: CubeOffsetModel.slideTransitionController,
-        curve: Curves.easeOutSine,
-      ),
-    );
-
-    /////// Purple Cube
-    CubeOffsetModel.purpleCubeAnimation =
-        CubeOffsetModel.purpleTweenSequence.animate(
-      CurvedAnimation(
-        parent: CubeOffsetModel.cubeOffsetController,
-        curve: Curves.easeOutQuad,
-      ),
-    );
-    CubeOffsetModel.purpleSlideTransition =
-        CubeOffsetModel.purpleTweenSlide.animate(
-      CurvedAnimation(
-        parent: CubeOffsetModel.slideTransitionController,
-        curve: Curves.easeOutSine,
-      ),
-    );
-
-    /////// Green Cube
-    CubeOffsetModel.greenCubeAnimation =
-        CubeOffsetModel.greenTweenSequence.animate(
-      CurvedAnimation(
-        parent: CubeOffsetModel.cubeOffsetController,
-        curve: Curves.easeOutQuad,
-      ),
-    );
-    CubeOffsetModel.greenSlideTransition =
-        CubeOffsetModel.greenTweenSlide.animate(
-      CurvedAnimation(
-        parent: CubeOffsetModel.slideTransitionController,
-        curve: Curves.easeOutSine,
-      ),
-    );
-
-    /////// Orange Cube
-    CubeOffsetModel.orangeCubeAnimation =
-        CubeOffsetModel.orangeTweenSequence.animate(
-      CurvedAnimation(
-        parent: CubeOffsetModel.cubeOffsetController,
-        curve: Curves.easeOutQuad,
-      ),
-    );
-    CubeOffsetModel.orangeSlideTransition =
-        CubeOffsetModel.orangeTweenSlide.animate(
-      CurvedAnimation(
-        parent: CubeOffsetModel.slideTransitionController,
-        curve: Curves.easeOutSine,
-      ),
-    );
-
     CubeOffsetModel.slideTransitionController.forward();
 
-    Future.delayed(Duration(milliseconds: 2000), () {
-      CubeOffsetModel.cubeOffsetController.forward();
+    CubeOffsetModel.slideTransitionController.addStatusListener((status) {
+      if (status == AnimationStatus.completed) {
+        CubeOffsetModel.cubeOffsetController.forward();
+      }
     });
 
     CubeOffsetModel.cubeOffsetController.addStatusListener((status) {

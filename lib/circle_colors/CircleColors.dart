@@ -14,45 +14,9 @@ class _CircleColorsState extends State<CircleColors>
     super.initState();
 
     CircleColorsModel.circleColorsController = AnimationController(
-        vsync: this, duration: Duration(milliseconds: 1500));
-
-    CircleColorsModel.whiteCircleAnimation =
-        CircleColorsModel.tweenRotate.animate(
-      CurvedAnimation(
-        parent: CircleColorsModel.circleColorsController,
-        curve: Interval(0.4, 1.0, curve: Curves.easeInOut),
-      ),
-    );
-
-    CircleColorsModel.blueCircleAnimation =
-        CircleColorsModel.tweenRotate.animate(
-      CurvedAnimation(
-        parent: CircleColorsModel.circleColorsController,
-        curve: Interval(0.3, 1.0, curve: Curves.easeInOut),
-      ),
-    );
-
-    CircleColorsModel.yellowCircleAnimation =
-        CircleColorsModel.tweenRotate.animate(
-      CurvedAnimation(
-        parent: CircleColorsModel.circleColorsController,
-        curve: Interval(0.2, 1.0, curve: Curves.easeInOut),
-      ),
-    );
-
-    CircleColorsModel.orangeCircleAnimation =
-        CircleColorsModel.tweenRotate.animate(
-      CurvedAnimation(
-        parent: CircleColorsModel.circleColorsController,
-        curve: Interval(0.1, 1.0, curve: Curves.easeInOut),
-      ),
-    );
-
-    CircleColorsModel.pinkCircleAnimation =
-        CircleColorsModel.tweenRotate.animate(
-      CurvedAnimation(
-        parent: CircleColorsModel.circleColorsController,
-        curve: Interval(0.0, 1.0, curve: Curves.easeInOut),
+      vsync: this,
+      duration: Duration(
+        milliseconds: 1500,
       ),
     );
 

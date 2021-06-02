@@ -13,13 +13,12 @@ class _CapsuleSpacingState extends State<CapsuleSpacing>
   void initState() {
     super.initState();
 
-    CapsuleSpacingModel.capsuleSpacingController =
-        AnimationController(vsync: this, duration: Duration(seconds: 1));
-
-    CapsuleSpacingModel.spacingAnimation = CapsuleSpacingModel.tweenSpacing
-        .animate(CurvedAnimation(
-            parent: CapsuleSpacingModel.capsuleSpacingController,
-            curve: Curves.easeInOut));
+    CapsuleSpacingModel.capsuleSpacingController = AnimationController(
+      vsync: this,
+      duration: Duration(
+        seconds: 1,
+      ),
+    );
 
     CapsuleSpacingModel.capsuleSpacingController.forward();
 
@@ -43,7 +42,7 @@ class _CapsuleSpacingState extends State<CapsuleSpacing>
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           /////// Green Capsule Shape
-          CapsuleShape(
+          CapsuleSpacingShape(
             height: 60,
             color: Color(0xFF06D6A0),
           ),
@@ -56,7 +55,7 @@ class _CapsuleSpacingState extends State<CapsuleSpacing>
           ),
 
           /////// Yellow Capsule Shape
-          CapsuleShape(
+          CapsuleSpacingShape(
             height: 40,
             color: Color(0xFFFFD166),
           ),
@@ -69,7 +68,7 @@ class _CapsuleSpacingState extends State<CapsuleSpacing>
           ),
 
           /////// Pink Capsule Shape
-          CapsuleShape(
+          CapsuleSpacingShape(
             height: 60,
             color: Color(0xFFEF476F),
           ),
@@ -82,7 +81,7 @@ class _CapsuleSpacingState extends State<CapsuleSpacing>
           ),
 
           /////// Yellow Capsule Shape
-          CapsuleShape(
+          CapsuleSpacingShape(
             height: 40,
             color: Color(0xFFFFD166),
           ),
@@ -95,7 +94,7 @@ class _CapsuleSpacingState extends State<CapsuleSpacing>
           ),
 
           /////// Green Capsule Shape
-          CapsuleShape(
+          CapsuleSpacingShape(
             height: 60,
             color: Color(0xFF06D6A0),
           )
@@ -127,11 +126,11 @@ class CapsuleSpacingBuilder extends StatelessWidget {
 }
 
 /////// Capsule Shape
-class CapsuleShape extends StatelessWidget {
+class CapsuleSpacingShape extends StatelessWidget {
   final double height;
   final Color color;
 
-  const CapsuleShape({
+  const CapsuleSpacingShape({
     required this.height,
     required this.color,
   });

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_loading_animation/CircleGradual.dart';
+import 'package:flutter_loading_animation/cube_offset/CubeOffset.dart';
 
 void main() {
   // debugPaintSizeEnabled = true;
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Loading Animation',
       home: Scaffold(
         backgroundColor: Colors.black87,
-        body: CircleGradual(),
+        body: CubeOffset(),
       ),
     );
   }

@@ -15,54 +15,8 @@ class _CircleFlipState extends State<CircleFlip> with TickerProviderStateMixin {
 
     CircleFlipModel.circleFlipController = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 1),
-    );
-
-    /////// Red Circle
-    CircleFlipModel.firstRedOffsetAnimation =
-        CircleFlipModel.firstTweenRed.animate(
-      CurvedAnimation(
-        parent: CircleFlipModel.circleFlipController,
-        curve: Interval(0.0, 0.5, curve: Curves.linear),
-      ),
-    );
-    CircleFlipModel.secondRedOffsetAnimation =
-        CircleFlipModel.secondTweenRed.animate(
-      CurvedAnimation(
-        parent: CircleFlipModel.circleFlipController,
-        curve: Interval(0.5, 1.0, curve: Curves.linear),
-      ),
-    );
-
-    /////// Blue Circle
-    CircleFlipModel.firstBlueOffsetAnimation =
-        CircleFlipModel.firstTweenBlue.animate(
-      CurvedAnimation(
-        parent: CircleFlipModel.circleFlipController,
-        curve: Interval(0.0, 0.5, curve: Curves.linear),
-      ),
-    );
-    CircleFlipModel.secondBlueOffsetAnimation =
-        CircleFlipModel.secondTweenBlue.animate(
-      CurvedAnimation(
-        parent: CircleFlipModel.circleFlipController,
-        curve: Interval(0.5, 1.0, curve: Curves.linear),
-      ),
-    );
-
-    /////// Opacity Animation
-    CircleFlipModel.firstOpacityAnimation =
-        CircleFlipModel.firstTweenOpacity.animate(
-      CurvedAnimation(
-        parent: CircleFlipModel.circleFlipController,
-        curve: Interval(0.5, 0.5, curve: Curves.linear),
-      ),
-    );
-    CircleFlipModel.secondOpacityAnimation =
-        CircleFlipModel.secondTweenOpacity.animate(
-      CurvedAnimation(
-        parent: CircleFlipModel.circleFlipController,
-        curve: Interval(0.5, 0.5, curve: Curves.linear),
+      duration: Duration(
+        seconds: 1,
       ),
     );
 
@@ -98,7 +52,7 @@ class _CircleFlipState extends State<CircleFlip> with TickerProviderStateMixin {
             ),
           ),
           builder: (context, child) => Transform.translate(
-            offset: CircleFlipModel.secondBlueOffsetAnimation.value,
+            offset: CircleFlipModel.secondBlueAnimation.value,
             child: Opacity(
               opacity: CircleFlipModel.secondOpacityAnimation.value,
               child: child,
@@ -116,7 +70,7 @@ class _CircleFlipState extends State<CircleFlip> with TickerProviderStateMixin {
             ),
           ),
           builder: (context, child) => Transform.translate(
-            offset: CircleFlipModel.firstRedOffsetAnimation.value,
+            offset: CircleFlipModel.firstRedAnimation.value,
             child: Opacity(
               opacity: CircleFlipModel.firstOpacityAnimation.value,
               child: child,
@@ -134,7 +88,7 @@ class _CircleFlipState extends State<CircleFlip> with TickerProviderStateMixin {
             ),
           ),
           builder: (context, child) => Transform.translate(
-            offset: CircleFlipModel.secondRedOffsetAnimation.value,
+            offset: CircleFlipModel.secondRedAnimation.value,
             child: Opacity(
               opacity: CircleFlipModel.secondOpacityAnimation.value,
               child: child,
@@ -152,7 +106,7 @@ class _CircleFlipState extends State<CircleFlip> with TickerProviderStateMixin {
             ),
           ),
           builder: (context, child) => Transform.translate(
-            offset: CircleFlipModel.firstBlueOffsetAnimation.value,
+            offset: CircleFlipModel.firstBlueAnimation.value,
             child: Opacity(
               opacity: CircleFlipModel.firstOpacityAnimation.value,
               child: child,
