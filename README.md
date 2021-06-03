@@ -1,16 +1,31 @@
-# flutter_loading_animation
+# Flutter Loading Animation
 
-A new Flutter project.
+<strong>My goal</strong> with this project is to get iOS & Android developers to use <strong>Creative Loading Animation</strong> without building them from scratch. 💯 <strong>Flutter NO</strong> External Packages.
 
-## Getting Started
+## Your Coffee allows me to excel, Gracias ☕
 
-This project is a starting point for a Flutter application.
+<a href="https://www.buymeacoffee.com/adamkif" target="_blank" rel="noopener noreferrer"><img src="https://github.com/adam-kif/SwiftUI-Loading-Animation/blob/main/Screenshot/BuyMeACoffee.png" alt="Buy Me A Coffee" /></a>
 
-A few resources to get you started if this is your first Flutter project:
+### Loading: Circle Opacity | Circle Colors | Capsule Spacing.
+<div align="center" width="100%">
+ <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/LoadingCircleOpacity.gif"
+      alt="Loading Circle Opacity">
+ <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/LoadingCircleColors.gif"
+      alt="Loading Circle Colors">
+ <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/LoadingCapsuleSpacing.gif"
+      alt="Loading Capsule Spacing">
+</div>
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+### Loading: Circle Flip | Cube Offset | Circle Gradual.
+<div align="center" width="100%">
+  <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/LoadingCircleFlip.gif"
+      alt="Loading Circle flip">
+ <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/LoadingCubeOffset.gif"  
+      alt="Loading Cube Offset">
+ <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/LoadingCircleGradual.gif"
+      alt="Circle Gradual">
+</div>
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Contributing
+
+Contributions are always welcome!
