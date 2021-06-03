@@ -23,12 +23,12 @@ class _CircleGradualState extends State<CircleGradual>
     );
 
     // Delete Future To fire Animation immediately
-    Future.delayed(Duration(seconds: 45), () {
+    Future.delayed(Duration(seconds: 40), () {
       CircleGradualModel.circleGradualcontroller.forward();
     });
 
     // => DELETE THIS
-    Future.delayed(Duration(seconds: 55), () {
+    Future.delayed(Duration(seconds: 46), () {
       CircleGradualModel.circleGradualcontroller.stop();
     });
 

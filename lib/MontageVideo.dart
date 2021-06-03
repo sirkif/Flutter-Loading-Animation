@@ -16,6 +16,32 @@ class MontageVideo extends StatefulWidget {
 class _MontageVideoState extends State<MontageVideo>
     with TickerProviderStateMixin {
   late AnimationController montageVideoController;
+  late AnimationController finalOpaciyController;
+  late Animation<double> finalOpaciyAnimation;
+  late Animation<double> finalScaleAnimation;
+  Tween<double> finalscaleTransitionTween = Tween(
+    begin: 1.0,
+    end: 150.0,
+  );
+
+  TweenSequence<double> finalOpacityAnimationTween = TweenSequence(
+    <TweenSequenceItem<double>>[
+      TweenSequenceItem<double>(
+        tween: Tween<double>(
+          begin: 0.0,
+          end: 1.0,
+        ),
+        weight: 05,
+      ),
+      TweenSequenceItem<double>(
+        tween: Tween<double>(
+          begin: 1.0,
+          end: 0.0,
+        ),
+        weight: 40,
+      ),
+    ],
+  );
 
   late AnimationController fadeTransitionController;
   late Animation<double> fadeTransitionAnimation;
@@ -25,7 +51,7 @@ class _MontageVideoState extends State<MontageVideo>
   late Animation<Offset> slidingAnimation;
   Tween<Offset> slidingTween = Tween(
     begin: Offset(0.0, -4.0),
-    end: Offset.zero,
+    end: Offset(0.0, -0.5),
   );
 
   late Animation<double> animationOpacityAnimation;
@@ -78,9 +104,10 @@ class _MontageVideoState extends State<MontageVideo>
   void initState() {
     super.initState();
     montageVideoController = AnimationController(
-      duration: const Duration(seconds: 9),
+      duration: const Duration(seconds: 8),
       vsync: this,
     );
+
     fadeTransitionController = AnimationController(
       duration: const Duration(milliseconds: 500),
       vsync: this,
@@ -88,6 +115,11 @@ class _MontageVideoState extends State<MontageVideo>
 
     slidingController = AnimationController(
       duration: const Duration(seconds: 1),
+      vsync: this,
+    );
+
+    finalOpaciyController = AnimationController(
+      duration: const Duration(seconds: 2),
       vsync: this,
     );
 
@@ -147,16 +179,23 @@ class _MontageVideoState extends State<MontageVideo>
         curve: Curves.bounceOut,
       ),
     );
+
+    finalOpaciyAnimation =
+        finalOpacityAnimationTween.animate(finalOpaciyController);
+    finalScaleAnimation =
+        finalscaleTransitionTween.animate(finalOpaciyController);
+
     Future.delayed(Duration(seconds: 1), () {
       montageVideoController.forward();
     });
 
-    Future.delayed(Duration(seconds: 56), () {
+    Future.delayed(Duration(seconds: 47), () {
       fadeTransitionController.forward();
     });
 
-    Future.delayed(Duration(seconds: 57), () {
+    Future.delayed(Duration(seconds: 48), () {
       slidingController.forward();
+      finalOpaciyController.forward();
     });
   }
 
@@ -190,6 +229,22 @@ class _MontageVideoState extends State<MontageVideo>
               ),
               buildCounter(),
             ],
+          ),
+        ),
+        ScaleTransition(
+          scale: finalScaleAnimation,
+          child: FadeTransition(
+            opacity: finalOpaciyAnimation,
+            child: Container(
+              width: 10,
+              height: 10,
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.white, width: 0.05),
+                borderRadius: BorderRadius.all(
+                  Radius.circular(50),
+                ),
+              ),
+            ),
           ),
         ),
         SlideTransition(

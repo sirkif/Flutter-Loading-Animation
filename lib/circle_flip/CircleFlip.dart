@@ -21,12 +21,12 @@ class _CircleFlipState extends State<CircleFlip> with TickerProviderStateMixin {
     );
 
     // Delete Future To fire Animation immediately
-    Future.delayed(Duration(seconds: 31), () {
+    Future.delayed(Duration(seconds: 28), () {
       CircleFlipModel.circleFlipController.forward();
     });
 
     // => DELETE THIS
-    Future.delayed(Duration(seconds: 38), () {
+    Future.delayed(Duration(seconds: 34), () {
       CircleFlipModel.circleFlipController.stop();
     });
 

@@ -21,12 +21,12 @@ class _CircleColorsState extends State<CircleColors>
     );
 
     // Delete Future To fire Animation immediately
-    Future.delayed(Duration(seconds: 17), () {
+    Future.delayed(Duration(seconds: 16), () {
       CircleColorsModel.circleColorsController.forward();
     });
 
     // => DELETE THIS
-    Future.delayed(Duration(seconds: 24), () {
+    Future.delayed(Duration(seconds: 22), () {
       CircleColorsModel.circleColorsController.stop();
     });
 

@@ -35,7 +35,7 @@ class _CircleOpacityState extends State<CircleOpacity>
     });
 
     // => DELETE THIS
-    Future.delayed(Duration(seconds: 17), () {
+    Future.delayed(Duration(seconds: 16), () {
       CircleOpacityModel.circleRotationController.stop();
     });
 
