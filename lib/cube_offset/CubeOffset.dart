@@ -24,7 +24,15 @@ class _CubeOffsetState extends State<CubeOffset> with TickerProviderStateMixin {
       duration: Duration(milliseconds: 2000),
     );
 
-    CubeOffsetModel.slideTransitionController.forward();
+    // Delete Future To fire Animation immediately
+    Future.delayed(Duration(seconds: 38), () {
+      CubeOffsetModel.slideTransitionController.forward();
+    });
+
+    // => DELETE THIS
+    Future.delayed(Duration(seconds: 45), () {
+      CubeOffsetModel.cubeOffsetController.stop();
+    });
 
     CubeOffsetModel.slideTransitionController.addStatusListener((status) {
       if (status == AnimationStatus.completed) {

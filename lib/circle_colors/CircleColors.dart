@@ -20,7 +20,15 @@ class _CircleColorsState extends State<CircleColors>
       ),
     );
 
-    CircleColorsModel.circleColorsController.forward();
+    // Delete Future To fire Animation immediately
+    Future.delayed(Duration(seconds: 17), () {
+      CircleColorsModel.circleColorsController.forward();
+    });
+
+    // => DELETE THIS
+    Future.delayed(Duration(seconds: 24), () {
+      CircleColorsModel.circleColorsController.stop();
+    });
 
     CircleColorsModel.circleColorsController.addStatusListener((status) {
       if (status == AnimationStatus.completed) {

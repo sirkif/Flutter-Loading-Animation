@@ -20,7 +20,15 @@ class _CapsuleSpacingState extends State<CapsuleSpacing>
       ),
     );
 
-    CapsuleSpacingModel.capsuleSpacingController.forward();
+    // Delete Future To fire Animation immediately
+    Future.delayed(Duration(seconds: 24), () {
+      CapsuleSpacingModel.capsuleSpacingController.forward();
+    });
+
+    // => DELETE THIS
+    Future.delayed(Duration(seconds: 31), () {
+      CapsuleSpacingModel.capsuleSpacingController.stop();
+    });
 
     CapsuleSpacingModel.capsuleSpacingController.addStatusListener((status) {
       if (status == AnimationStatus.completed) {

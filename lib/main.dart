@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_loading_animation/cube_offset/CubeOffset.dart';
+import 'package:flutter_loading_animation/MontageVideo.dart';
 
 void main() {
   // debugPaintSizeEnabled = true;
@@ -13,8 +13,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Loading Animation',
       home: Scaffold(
-        backgroundColor: Colors.black87,
-        body: CubeOffset(),
+        backgroundColor: Colors.black,
+        body: MontageVideo(),
       ),
     );
   }

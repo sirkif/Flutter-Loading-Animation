@@ -22,8 +22,14 @@ class _CircleGradualState extends State<CircleGradual>
       ),
     );
 
-    Future.delayed(Duration(seconds: 1), () {
+    // Delete Future To fire Animation immediately
+    Future.delayed(Duration(seconds: 45), () {
       CircleGradualModel.circleGradualcontroller.forward();
+    });
+
+    // => DELETE THIS
+    Future.delayed(Duration(seconds: 55), () {
+      CircleGradualModel.circleGradualcontroller.stop();
     });
 
     CircleGradualModel.circleGradualcontroller.addStatusListener((status) {
@@ -195,7 +201,7 @@ class CircleGradualBuilder extends StatelessWidget {
   }
 }
 
-/////// Transform Rotate Circle
+/////// Transform Circle Gradual
 class TransformCircleGradual extends StatelessWidget {
   final double angle;
   final double scale;
