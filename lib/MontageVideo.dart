@@ -163,6 +163,7 @@ class _MontageVideoState extends State<MontageVideo>
   @override
   void dispose() {
     super.dispose();
+
     montageVideoController.dispose();
   }
 
