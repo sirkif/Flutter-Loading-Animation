@@ -18,18 +18,13 @@ class _CircleGradualState extends State<CircleGradual>
     CircleGradualModel.circleGradualcontroller = AnimationController(
       vsync: this,
       duration: Duration(
-        seconds: 4,
+        seconds: 6,
       ),
     );
 
     // Delete Future To fire Animation immediately
-    Future.delayed(Duration(seconds: 40), () {
+    Future.delayed(Duration(seconds: 1), () {
       CircleGradualModel.circleGradualcontroller.forward();
-    });
-
-    // => DELETE THIS
-    Future.delayed(Duration(seconds: 46), () {
-      CircleGradualModel.circleGradualcontroller.stop();
     });
 
     CircleGradualModel.circleGradualcontroller.addStatusListener((status) {

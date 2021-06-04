@@ -30,13 +30,8 @@ class _CircleOpacityState extends State<CircleOpacity>
     );
 
     // Delete Future To fire Animation immediately
-    Future.delayed(Duration(seconds: 10), () {
+    Future.delayed(Duration(seconds: 1), () {
       CircleOpacityModel.circleOpacityController.forward();
-    });
-
-    // => DELETE THIS
-    Future.delayed(Duration(seconds: 16), () {
-      CircleOpacityModel.circleRotationController.stop();
     });
 
     CircleOpacityModel.circleOpacityController.addStatusListener((status) {

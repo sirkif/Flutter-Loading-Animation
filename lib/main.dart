@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_loading_animation/MontageVideo.dart';
+
+// import 'capsule_spacing/CapsuleSpacing.dart';
+// import 'circle_colors/CircleColors.dart';
+// import 'circle_flip/CircleFlip.dart';
+// import 'circle_gradual/CircleGradual.dart';
+import 'circle_opacity/CircleOpacity.dart';
+// import 'cube_offset/CubeOffset.dart';
 
 void main() {
   // debugPaintSizeEnabled = true;
@@ -14,7 +20,12 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Loading Animation',
       home: Scaffold(
         backgroundColor: Colors.black,
-        body: MontageVideo(),
+        // body: CapsuleSpacing(),
+        // body: CircleColors(),
+        // body: CircleFlip(),
+        // body: CircleGradual(),
+        body: CircleOpacity(),
+        // body: CubeOffset(),
       ),
     );
   }

@@ -21,13 +21,8 @@ class _CapsuleSpacingState extends State<CapsuleSpacing>
     );
 
     // Delete Future To fire Animation immediately
-    Future.delayed(Duration(seconds: 22), () {
+    Future.delayed(Duration(seconds: 1), () {
       CapsuleSpacingModel.capsuleSpacingController.forward();
-    });
-
-    // => DELETE THIS
-    Future.delayed(Duration(seconds: 28), () {
-      CapsuleSpacingModel.capsuleSpacingController.stop();
     });
 
     CapsuleSpacingModel.capsuleSpacingController.addStatusListener((status) {
