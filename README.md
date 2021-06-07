@@ -30,10 +30,12 @@
 I made the #Flutter animation slower to make your eyes recognize the animation. 
 
 In reality it is not. To customize the animation.
+
 ✅ 
 - Change the duration
 - Change the size of the shape
 - Remove the center widget
+
 🚫
 - Don't touch Interval ( unless you have experience in animation )
 
