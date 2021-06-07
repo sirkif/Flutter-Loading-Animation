@@ -27,7 +27,7 @@
 </div>
 
 ## Usage
-I made the #Flutter animation slower to make your eyes recognize the animation. 
+I made the <strong>Flutter</strong> animation slower to make your eyes recognize the animation. 
 
 In reality it is not. To customize the animation.
 
