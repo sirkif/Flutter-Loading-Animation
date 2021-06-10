@@ -6,9 +6,9 @@ import 'package:flutter/material.dart';
 // import 'circle_gradual/CircleGradual.dart';
 // import 'circle_opacity/CircleOpacity.dart';
 // import 'cube_offset/CubeOffset.dart';
-// import 'box_rotation/BoxRotation.dart';
+import 'box_rotation/BoxRotation.dart';
 // import 'circle_rotation/CircleRotation.dart';
-import 'cube_opacity/CubeOpacity.dart';
+// import 'cube_opacity/CubeOpacity.dart';
 
 void main() {
   // debugPaintSizeEnabled = true;
@@ -29,9 +29,9 @@ class MyApp extends StatelessWidget {
         // body: CircleGradual(),
         // body: CircleOpacity(),
         // body: CubeOffset(),
-        // body: BoxRotation(),
+        body: BoxRotation(),
         // body: CircleRotation(),
-        body: CubeOpacity(),
+        // body: CubeOpacity(),
       ),
     );
   }
