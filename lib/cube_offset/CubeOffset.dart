@@ -15,13 +15,13 @@ class _CubeOffsetState extends State<CubeOffset> with TickerProviderStateMixin {
     CubeOffsetModel.cubeOffsetController = AnimationController(
       vsync: this,
       duration: Duration(
-        seconds: 2,
+        milliseconds: 1500,
       ),
     );
 
     CubeOffsetModel.slideTransitionController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 2000),
+      duration: Duration(seconds: 2),
     );
 
     // Delete Future To fire Animation immediately
@@ -55,57 +55,25 @@ class _CubeOffsetState extends State<CubeOffset> with TickerProviderStateMixin {
       child: Stack(
         alignment: Alignment.center,
         children: [
-          AnimatedBuilder(
-            animation: CubeOffsetModel.cubeOffsetController,
-            child: SlideTransition(
-              position: CubeOffsetModel.yellowSlideTransition,
-              child: CubeShape(
-                color: Color(0xFFFFCB77),
-              ),
-            ),
-            builder: (context, child) => Transform.translate(
-              offset: CubeOffsetModel.yellowCubeAnimation.value,
-              child: child,
-            ),
+          CubeOffsetBuilder(
+            color: Color(0xFFFFCB77),
+            slide: CubeOffsetModel.yellowSlideTransition,
+            offset: CubeOffsetModel.yellowCubeAnimation,
           ),
-          AnimatedBuilder(
-            animation: CubeOffsetModel.cubeOffsetController,
-            child: SlideTransition(
-              position: CubeOffsetModel.purpleSlideTransition,
-              child: CubeShape(
-                color: Color(0xFF867AE9),
-              ),
-            ),
-            builder: (context, child) => Transform.translate(
-              offset: CubeOffsetModel.purpleCubeAnimation.value,
-              child: child,
-            ),
+          CubeOffsetBuilder(
+            color: Color(0xFF867AE9),
+            slide: CubeOffsetModel.purpleSlideTransition,
+            offset: CubeOffsetModel.purpleCubeAnimation,
           ),
-          AnimatedBuilder(
-            animation: CubeOffsetModel.cubeOffsetController,
-            child: SlideTransition(
-              position: CubeOffsetModel.greenSlideTransition,
-              child: CubeShape(
-                color: Color(0xFF00B8A9),
-              ),
-            ),
-            builder: (context, child) => Transform.translate(
-              offset: CubeOffsetModel.greenCubeAnimation.value,
-              child: child,
-            ),
+          CubeOffsetBuilder(
+            color: Color(0xFF00B8A9),
+            slide: CubeOffsetModel.greenSlideTransition,
+            offset: CubeOffsetModel.greenCubeAnimation,
           ),
-          AnimatedBuilder(
-            animation: CubeOffsetModel.cubeOffsetController,
-            child: SlideTransition(
-              position: CubeOffsetModel.orangeSlideTransition,
-              child: CubeShape(
-                color: Color(0xFFFE6D73),
-              ),
-            ),
-            builder: (context, child) => Transform.translate(
-              offset: CubeOffsetModel.orangeCubeAnimation.value,
-              child: child,
-            ),
+          CubeOffsetBuilder(
+            color: Color(0xFFFE6D73),
+            slide: CubeOffsetModel.orangeSlideTransition,
+            offset: CubeOffsetModel.orangeCubeAnimation,
           ),
         ],
       ),
@@ -113,6 +81,37 @@ class _CubeOffsetState extends State<CubeOffset> with TickerProviderStateMixin {
   }
 }
 
+/////// Cube Offset Builder
+class CubeOffsetBuilder extends StatelessWidget {
+  final Color color;
+  final Animation<Offset> slide;
+  final Animation<Offset> offset;
+
+  const CubeOffsetBuilder({
+    required this.color,
+    required this.slide,
+    required this.offset,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: CubeOffsetModel.cubeOffsetController,
+      child: SlideTransition(
+        position: slide,
+        child: CubeShape(
+          color: color,
+        ),
+      ),
+      builder: (context, child) => Transform.translate(
+        offset: offset.value,
+        child: child,
+      ),
+    );
+  }
+}
+
+/////// Cube Shape
 class CubeShape extends StatelessWidget {
   final Color color;
 
@@ -123,8 +122,8 @@ class CubeShape extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 40,
-      height: 40,
+      width: 30,
+      height: 30,
       decoration: BoxDecoration(
         color: color,
         shape: BoxShape.rectangle,

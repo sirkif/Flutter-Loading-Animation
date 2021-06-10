@@ -11,7 +11,7 @@ class CubeOffsetModel {
     required double beginOffsetY,
   }) {
     Tween<Offset> offsetTween =
-        Tween(begin: Offset(beginOffsetX, beginOffsetY), end: Offset(0, 0));
+        Tween(begin: Offset(beginOffsetX, beginOffsetY), end: Offset.zero);
 
     Animation<Offset> offsetAnimation = offsetTween.animate(
       CurvedAnimation(
@@ -24,64 +24,56 @@ class CubeOffsetModel {
   }
 
   static Animation<Offset> offsetSequenceAnimation({
-    required double beginFirstOffsetX,
-    required double beginFirstOffsetY,
-    required double endFirstOffsetX,
-    required double endFirstOffsetY,
-    required double beginSecondOffsetX,
-    required double beginSecondOffsetY,
-    required double endSecondOffsetX,
-    required double endSecondOffsetY,
-    required double beginThirdOffsetX,
-    required double beginThirdOffsetY,
-    required double endThirdOffsetX,
-    required double endThirdOffsetY,
-    required double beginFourthOffsetX,
-    required double beginFourthOffsetY,
-    required double endFourthOffsetX,
-    required double endFourthOffsetY,
+    required Offset beginFirstOffset,
+    required Offset endFirstOffset,
+    required Offset beginSecondOffset,
+    required Offset endSecondOffset,
+    required Offset beginThirdOffset,
+    required Offset endThirdOffset,
+    required Offset beginFourthOffset,
+    required Offset endFourthOffset,
   }) {
-    TweenSequence<Offset> yellowTweenSequence = TweenSequence(
+    TweenSequence<Offset> offsetTweenSequence = TweenSequence(
       <TweenSequenceItem<Offset>>[
         TweenSequenceItem<Offset>(
           tween: Tween<Offset>(
-            begin: Offset(beginFirstOffsetX, beginFirstOffsetY),
-            end: Offset(endFirstOffsetX, endFirstOffsetY),
+            begin: beginFirstOffset,
+            end: endFirstOffset,
           ),
           weight: 40,
         ),
         TweenSequenceItem<Offset>(
           tween: Tween<Offset>(
-            begin: Offset(beginSecondOffsetX, beginSecondOffsetY),
-            end: Offset(endSecondOffsetX, endSecondOffsetY),
+            begin: beginSecondOffset,
+            end: endSecondOffset,
           ),
           weight: 40,
         ),
         TweenSequenceItem<Offset>(
           tween: Tween<Offset>(
-            begin: Offset(beginThirdOffsetX, beginThirdOffsetY),
-            end: Offset(endThirdOffsetX, endThirdOffsetY),
+            begin: beginThirdOffset,
+            end: endThirdOffset,
           ),
           weight: 40,
         ),
         TweenSequenceItem<Offset>(
           tween: Tween<Offset>(
-            begin: Offset(beginFourthOffsetX, beginFourthOffsetY),
-            end: Offset(endFourthOffsetX, endFourthOffsetY),
+            begin: beginFourthOffset,
+            end: endFourthOffset,
           ),
           weight: 40,
         ),
       ],
     );
 
-    Animation<Offset> cubeAnimation = yellowTweenSequence.animate(
+    Animation<Offset> cubeOffsetAnimation = offsetTweenSequence.animate(
       CurvedAnimation(
         parent: cubeOffsetController,
-        curve: Curves.easeOutQuad,
+        curve: Curves.easeOutSine,
       ),
     );
 
-    return cubeAnimation;
+    return cubeOffsetAnimation;
   }
 
   /////// Yellow Cube Animation
@@ -91,22 +83,14 @@ class CubeOffsetModel {
   );
 
   static Animation<Offset> yellowCubeAnimation = offsetSequenceAnimation(
-    beginFirstOffsetX: -20.0,
-    beginFirstOffsetY: 20.0,
-    endFirstOffsetX: 20.0,
-    endFirstOffsetY: 20.0,
-    beginSecondOffsetX: 20.0,
-    beginSecondOffsetY: 20.0,
-    endSecondOffsetX: 20.0,
-    endSecondOffsetY: -20.0,
-    beginThirdOffsetX: 20.0,
-    beginThirdOffsetY: -20.0,
-    endThirdOffsetX: -20.0,
-    endThirdOffsetY: -20.0,
-    beginFourthOffsetX: -20.0,
-    beginFourthOffsetY: -20.0,
-    endFourthOffsetX: -20.0,
-    endFourthOffsetY: 20.0,
+    beginFirstOffset: Offset(-15.0, 15.0),
+    endFirstOffset: Offset(15.0, 15.0),
+    beginSecondOffset: Offset(15.0, 15.0),
+    endSecondOffset: Offset(15.0, -15.0),
+    beginThirdOffset: Offset(15.0, -15.0),
+    endThirdOffset: Offset(-15.0, -15.0),
+    beginFourthOffset: Offset(-15.0, -15.0),
+    endFourthOffset: Offset(-15.0, 15.0),
   );
 
   /////// Purple Cube Animation
@@ -116,22 +100,14 @@ class CubeOffsetModel {
   );
 
   static Animation<Offset> purpleCubeAnimation = offsetSequenceAnimation(
-    beginFirstOffsetX: 20.0,
-    beginFirstOffsetY: -20.0,
-    endFirstOffsetX: -20.0,
-    endFirstOffsetY: -20.0,
-    beginSecondOffsetX: -20.0,
-    beginSecondOffsetY: -20.0,
-    endSecondOffsetX: -20.0,
-    endSecondOffsetY: 20.0,
-    beginThirdOffsetX: -20.0,
-    beginThirdOffsetY: 20.0,
-    endThirdOffsetX: 20.0,
-    endThirdOffsetY: 20.0,
-    beginFourthOffsetX: 20.0,
-    beginFourthOffsetY: 20.0,
-    endFourthOffsetX: 20.0,
-    endFourthOffsetY: -20.0,
+    beginFirstOffset: Offset(15.0, -15.0),
+    endFirstOffset: Offset(-15.0, -15.0),
+    beginSecondOffset: Offset(-15.0, -15.0),
+    endSecondOffset: Offset(-15.0, 15.0),
+    beginThirdOffset: Offset(-15.0, 15.0),
+    endThirdOffset: Offset(15.0, 15.0),
+    beginFourthOffset: Offset(15.0, 15.0),
+    endFourthOffset: Offset(15.0, -15.0),
   );
 
   /////// Green Cube Animation
@@ -141,22 +117,14 @@ class CubeOffsetModel {
   );
 
   static Animation<Offset> greenCubeAnimation = offsetSequenceAnimation(
-    beginFirstOffsetX: 20.0,
-    beginFirstOffsetY: 20.0,
-    endFirstOffsetX: 20.0,
-    endFirstOffsetY: -20.0,
-    beginSecondOffsetX: 20.0,
-    beginSecondOffsetY: -20.0,
-    endSecondOffsetX: -20.0,
-    endSecondOffsetY: -20.0,
-    beginThirdOffsetX: -20.0,
-    beginThirdOffsetY: -20.0,
-    endThirdOffsetX: -20.0,
-    endThirdOffsetY: 20.0,
-    beginFourthOffsetX: -20.0,
-    beginFourthOffsetY: 20.0,
-    endFourthOffsetX: 20.0,
-    endFourthOffsetY: 20.0,
+    beginFirstOffset: Offset(15.0, 15.0),
+    endFirstOffset: Offset(15.0, -15.0),
+    beginSecondOffset: Offset(15.0, -15.0),
+    endSecondOffset: Offset(-15.0, -15.0),
+    beginThirdOffset: Offset(-15.0, -15.0),
+    endThirdOffset: Offset(-15.0, 15.0),
+    beginFourthOffset: Offset(-15.0, 15.0),
+    endFourthOffset: Offset(15.0, 15.0),
   );
 
   /////// Orange Cube
@@ -166,21 +134,13 @@ class CubeOffsetModel {
   );
 
   static Animation<Offset> orangeCubeAnimation = offsetSequenceAnimation(
-    beginFirstOffsetX: -20.0,
-    beginFirstOffsetY: -20.0,
-    endFirstOffsetX: -20.0,
-    endFirstOffsetY: 20.0,
-    beginSecondOffsetX: -20.0,
-    beginSecondOffsetY: 20.0,
-    endSecondOffsetX: 20.0,
-    endSecondOffsetY: 20.0,
-    beginThirdOffsetX: 20.0,
-    beginThirdOffsetY: 20.0,
-    endThirdOffsetX: 20.0,
-    endThirdOffsetY: -20.0,
-    beginFourthOffsetX: 20.0,
-    beginFourthOffsetY: -20.0,
-    endFourthOffsetX: -20.0,
-    endFourthOffsetY: -20.0,
+    beginFirstOffset: Offset(-15.0, -15.0),
+    endFirstOffset: Offset(-15.0, 15.0),
+    beginSecondOffset: Offset(-15.0, 15.0),
+    endSecondOffset: Offset(15.0, 15.0),
+    beginThirdOffset: Offset(15.0, 15.0),
+    endThirdOffset: Offset(15.0, -15.0),
+    beginFourthOffset: Offset(15.0, -15.0),
+    endFourthOffset: Offset(-15.0, -15.0),
   );
 }

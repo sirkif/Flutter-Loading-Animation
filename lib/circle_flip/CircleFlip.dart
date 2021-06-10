@@ -16,7 +16,7 @@ class _CircleFlipState extends State<CircleFlip> with TickerProviderStateMixin {
     CircleFlipModel.circleFlipController = AnimationController(
       vsync: this,
       duration: Duration(
-        seconds: 1,
+        milliseconds: 800,
       ),
     );
 
@@ -41,82 +41,66 @@ class _CircleFlipState extends State<CircleFlip> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Center(
-        child: Stack(
-      alignment: Alignment.center,
-      children: [
-        AnimatedBuilder(
-          animation: CircleFlipModel.circleFlipController,
-          child: Container(
-            width: 50,
-            height: 50,
-            decoration: BoxDecoration(
-              color: Color(0xFF0061A8),
-              shape: BoxShape.circle,
-            ),
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          CircleFlipBuilder(
+            color: Color(0xFF0061A8),
+            offset: CircleFlipModel.secondBlueAnimation,
+            opacity: CircleFlipModel.secondOpacityAnimation,
           ),
-          builder: (context, child) => Transform.translate(
-            offset: CircleFlipModel.secondBlueAnimation.value,
-            child: Opacity(
-              opacity: CircleFlipModel.secondOpacityAnimation.value,
-              child: child,
-            ),
+          CircleFlipBuilder(
+            color: Color(0xFFFF165D),
+            offset: CircleFlipModel.firstRedAnimation,
+            opacity: CircleFlipModel.firstOpacityAnimation,
           ),
+          CircleFlipBuilder(
+            color: Color(0xFFFF165D),
+            offset: CircleFlipModel.secondRedAnimation,
+            opacity: CircleFlipModel.secondOpacityAnimation,
+          ),
+          CircleFlipBuilder(
+            color: Color(0xFF0061A8),
+            offset: CircleFlipModel.firstBlueAnimation,
+            opacity: CircleFlipModel.firstOpacityAnimation,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/////// Circle Flip Builder
+class CircleFlipBuilder extends StatelessWidget {
+  final Color color;
+  final Animation<Offset> offset;
+  final Animation<double> opacity;
+
+  const CircleFlipBuilder({
+    required this.color,
+    required this.offset,
+    required this.opacity,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: CircleFlipModel.circleFlipController,
+      child: Container(
+        width: 40,
+        height: 40,
+        decoration: BoxDecoration(
+          color: color,
+          shape: BoxShape.circle,
         ),
-        AnimatedBuilder(
-          animation: CircleFlipModel.circleFlipController,
-          child: Container(
-            width: 50,
-            height: 50,
-            decoration: BoxDecoration(
-              color: Color(0xFFFF165D),
-              shape: BoxShape.circle,
-            ),
-          ),
-          builder: (context, child) => Transform.translate(
-            offset: CircleFlipModel.firstRedAnimation.value,
-            child: Opacity(
-              opacity: CircleFlipModel.firstOpacityAnimation.value,
-              child: child,
-            ),
-          ),
+      ),
+      builder: (context, child) => Transform.translate(
+        offset: offset.value,
+        child: Opacity(
+          opacity: opacity.value,
+          child: child,
         ),
-        AnimatedBuilder(
-          animation: CircleFlipModel.circleFlipController,
-          child: Container(
-            width: 50,
-            height: 50,
-            decoration: BoxDecoration(
-              color: Color(0xFFFF165D),
-              shape: BoxShape.circle,
-            ),
-          ),
-          builder: (context, child) => Transform.translate(
-            offset: CircleFlipModel.secondRedAnimation.value,
-            child: Opacity(
-              opacity: CircleFlipModel.secondOpacityAnimation.value,
-              child: child,
-            ),
-          ),
-        ),
-        AnimatedBuilder(
-          animation: CircleFlipModel.circleFlipController,
-          child: Container(
-            width: 50,
-            height: 50,
-            decoration: BoxDecoration(
-              color: Color(0xFF0061A8),
-              shape: BoxShape.circle,
-            ),
-          ),
-          builder: (context, child) => Transform.translate(
-            offset: CircleFlipModel.firstBlueAnimation.value,
-            child: Opacity(
-              opacity: CircleFlipModel.firstOpacityAnimation.value,
-              child: child,
-            ),
-          ),
-        ),
-      ],
-    ));
+      ),
+    );
   }
 }

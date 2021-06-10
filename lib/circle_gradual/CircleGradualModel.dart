@@ -6,7 +6,7 @@ class CircleGradualModel {
   static late AnimationController circleGradualcontroller;
 
   static Animation<Offset> offsetAnimation({
-    double beginOffsetX = 55.0,
+    double beginOffsetX = 45.0,
     double endOffsetX = 0.0,
     required double begin,
     required double end,
@@ -99,7 +99,7 @@ class CircleGradualModel {
 
   /////// 6 Circle Animation
   static Animation<Offset> sixthCircleAnimation = offsetAnimation(
-    beginOffsetX: -55.0,
+    beginOffsetX: -45.0,
     begin: 0.3125,
     end: 0.375,
   );
@@ -111,7 +111,7 @@ class CircleGradualModel {
 
   /////// 7 Circle Animation
   static Animation<Offset> seventhCircleAnimation = offsetAnimation(
-    beginOffsetX: -55.0,
+    beginOffsetX: -45.0,
     begin: 0.375,
     end: 0.4375,
   );
@@ -123,7 +123,7 @@ class CircleGradualModel {
 
   /////// 8 Circle Animation
   static Animation<Offset> eighthCircleAnimation = offsetAnimation(
-    beginOffsetX: -55.0,
+    beginOffsetX: -45.0,
     begin: 0.4375,
     end: 0.5,
   );
@@ -136,7 +136,7 @@ class CircleGradualModel {
   /////// 9 Circle Animation
   static Animation<Offset> ninthCircleAnimation = offsetAnimation(
     beginOffsetX: 0.0,
-    endOffsetX: 55.0,
+    endOffsetX: 45.0,
     begin: 0.5,
     end: 0.5625,
   );
@@ -151,7 +151,7 @@ class CircleGradualModel {
   /////// 10 Circle Animation
   static Animation<Offset> tenthCircleAnimation = offsetAnimation(
     beginOffsetX: 0.0,
-    endOffsetX: 55.0,
+    endOffsetX: 45.0,
     begin: 0.5625,
     end: 0.625,
   );
@@ -166,7 +166,7 @@ class CircleGradualModel {
   /////// 11 Circle Animation
   static Animation<Offset> eleventhCircleAnimation = offsetAnimation(
     beginOffsetX: 0.0,
-    endOffsetX: 55.0,
+    endOffsetX: 45.0,
     begin: 0.625,
     end: 0.6875,
   );
@@ -181,7 +181,7 @@ class CircleGradualModel {
   /////// 12 Circle Animation
   static Animation<Offset> twelfthCircleAnimation = offsetAnimation(
     beginOffsetX: 0.0,
-    endOffsetX: 55.0,
+    endOffsetX: 45.0,
     begin: 0.6875,
     end: 0.75,
   );
@@ -196,7 +196,7 @@ class CircleGradualModel {
   /////// 13 Circle Animation
   static Animation<Offset> thirteenthCircleAnimation = offsetAnimation(
     beginOffsetX: 0.0,
-    endOffsetX: 55.0,
+    endOffsetX: 45.0,
     begin: 0.75,
     end: 0.8125,
   );
@@ -211,7 +211,7 @@ class CircleGradualModel {
   /////// 14 Circle Animation
   static Animation<Offset> fourteenthCircleAnimation = offsetAnimation(
     beginOffsetX: 0.0,
-    endOffsetX: -55.0,
+    endOffsetX: -45.0,
     begin: 0.8125,
     end: 0.875,
   );
@@ -226,7 +226,7 @@ class CircleGradualModel {
   /////// 15 Circle Animation
   static Animation<Offset> fifteenthCircleAnimation = offsetAnimation(
     beginOffsetX: 0.0,
-    endOffsetX: -55.0,
+    endOffsetX: -45.0,
     begin: 0.875,
     end: 0.9375,
   );
@@ -241,7 +241,7 @@ class CircleGradualModel {
   /////// 16 Circle Animation
   static Animation<Offset> sixteenthCircleAnimation = offsetAnimation(
     beginOffsetX: 0.0,
-    endOffsetX: -55.0,
+    endOffsetX: -45.0,
     begin: 0.9375,
     end: 1.0,
   );

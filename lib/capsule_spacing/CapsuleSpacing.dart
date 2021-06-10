@@ -16,7 +16,7 @@ class _CapsuleSpacingState extends State<CapsuleSpacing>
     CapsuleSpacingModel.capsuleSpacingController = AnimationController(
       vsync: this,
       duration: Duration(
-        seconds: 1,
+        milliseconds: 500,
       ),
     );
 
@@ -46,59 +46,51 @@ class _CapsuleSpacingState extends State<CapsuleSpacing>
         children: [
           /////// Green Capsule Shape
           CapsuleSpacingShape(
-            height: 60,
+            height: 50,
             color: Color(0xFF06D6A0),
           ),
 
           /////// Spacing Animation
           CapsuleSpacingBuilder(
-            widthAnimation: CapsuleSpacingModel.spacingAnimation,
-            capsuleSpacingController:
-                CapsuleSpacingModel.capsuleSpacingController,
+            width: CapsuleSpacingModel.spacingAnimation,
           ),
 
           /////// Yellow Capsule Shape
           CapsuleSpacingShape(
-            height: 40,
+            height: 30,
             color: Color(0xFFFFD166),
           ),
 
           /////// Spacing Animation
           CapsuleSpacingBuilder(
-            widthAnimation: CapsuleSpacingModel.spacingAnimation,
-            capsuleSpacingController:
-                CapsuleSpacingModel.capsuleSpacingController,
+            width: CapsuleSpacingModel.spacingAnimation,
           ),
 
           /////// Pink Capsule Shape
           CapsuleSpacingShape(
-            height: 60,
+            height: 50,
             color: Color(0xFFEF476F),
           ),
 
           /////// Spacing Animation
           CapsuleSpacingBuilder(
-            widthAnimation: CapsuleSpacingModel.spacingAnimation,
-            capsuleSpacingController:
-                CapsuleSpacingModel.capsuleSpacingController,
+            width: CapsuleSpacingModel.spacingAnimation,
           ),
 
           /////// Yellow Capsule Shape
           CapsuleSpacingShape(
-            height: 40,
+            height: 30,
             color: Color(0xFFFFD166),
           ),
 
           /////// Spacing Animation
           CapsuleSpacingBuilder(
-            widthAnimation: CapsuleSpacingModel.spacingAnimation,
-            capsuleSpacingController:
-                CapsuleSpacingModel.capsuleSpacingController,
+            width: CapsuleSpacingModel.spacingAnimation,
           ),
 
           /////// Green Capsule Shape
           CapsuleSpacingShape(
-            height: 60,
+            height: 50,
             color: Color(0xFF06D6A0),
           )
         ],
@@ -109,20 +101,18 @@ class _CapsuleSpacingState extends State<CapsuleSpacing>
 
 /////// Loading Capsule Builder
 class CapsuleSpacingBuilder extends StatelessWidget {
-  final Animation<double> widthAnimation;
-  final Listenable capsuleSpacingController;
+  final Animation<double> width;
 
   const CapsuleSpacingBuilder({
-    required this.widthAnimation,
-    required this.capsuleSpacingController,
+    required this.width,
   });
 
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
-      animation: capsuleSpacingController,
+      animation: CapsuleSpacingModel.capsuleSpacingController,
       builder: (context, child) => SizedBox(
-        width: widthAnimation.value,
+        width: width.value,
       ),
     );
   }

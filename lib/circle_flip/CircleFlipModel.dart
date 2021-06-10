@@ -53,30 +53,30 @@ class CircleFlipModel {
 
   /////// Red Circle Animation
   static Animation<Offset> firstRedAnimation = offsetAnimation(
-    beginOffsetX: -25.0,
-    endOffsetX: 25.0,
+    beginOffsetX: -20.0,
+    endOffsetX: 20.0,
     begin: 0.0,
     end: 0.5,
   );
 
   static Animation<Offset> secondRedAnimation = offsetAnimation(
-    beginOffsetX: 25.0,
-    endOffsetX: -25.0,
+    beginOffsetX: 20.0,
+    endOffsetX: -20.0,
     begin: 0.5,
     end: 1.0,
   );
 
   /////// Blue Circle Animation
   static Animation<Offset> firstBlueAnimation = offsetAnimation(
-    beginOffsetX: 25.0,
-    endOffsetX: -25.0,
+    beginOffsetX: 20.0,
+    endOffsetX: -20.0,
     begin: 0.0,
     end: 0.5,
   );
 
   static Animation<Offset> secondBlueAnimation = offsetAnimation(
-    beginOffsetX: -25.0,
-    endOffsetX: 25.0,
+    beginOffsetX: -20.0,
+    endOffsetX: 20.0,
     begin: 0.5,
     end: 1.0,
   );

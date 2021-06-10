@@ -18,7 +18,7 @@ class _CircleGradualState extends State<CircleGradual>
     CircleGradualModel.circleGradualcontroller = AnimationController(
       vsync: this,
       duration: Duration(
-        seconds: 6,
+        seconds: 4,
       ),
     );
 
@@ -233,8 +233,8 @@ class CircleGradualShape extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 30,
-      height: 30,
+      width: 25,
+      height: 25,
       decoration: BoxDecoration(
         color: Color(0xFFFFF5AB),
         shape: BoxShape.circle,

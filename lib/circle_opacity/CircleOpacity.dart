@@ -18,14 +18,14 @@ class _CircleOpacityState extends State<CircleOpacity>
     CircleOpacityModel.circleOpacityController = AnimationController(
       vsync: this,
       duration: Duration(
-        milliseconds: 1800,
+        milliseconds: 1500,
       ),
     );
 
     CircleOpacityModel.circleRotationController = AnimationController(
       vsync: this,
       duration: Duration(
-        milliseconds: 1800,
+        milliseconds: 1500,
       ),
     );
 
