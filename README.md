@@ -10,20 +10,20 @@
 
 <div align="center" width="100%">
  <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/CircleOpacity.gif"
-      alt="Loading Circle Opacity">
+      alt="Circle Opacity">
  <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/CircleColors.gif"
-      alt="Loading Circle Colors">
+      alt="Circle Colors">
  <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/CapsuleSpacing.gif"
-      alt="Loading Capsule Spacing">
+      alt="Capsule Spacing">
 </div>
 
 ### Loading: Circle Flip | Cube Offset | Circle Gradual.
 
 <div align="center" width="100%">
   <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/CircleFlip.gif"
-      alt="Loading Circle flip">
+      alt="Circle flip">
  <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/CubeOffset.gif"
-      alt="Loading Cube Offset">
+      alt="Cube Offset">
  <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/CircleGradual.gif"
       alt="Circle Gradual">
 </div>
@@ -32,11 +32,11 @@
 
 <div align="center" width="100%">
   <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/CubeOpacity.gif"
-      alt="Loading Circle flip">
+      alt="Cube Opacity">
  <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/BoxRotation.gif"
-      alt="Loading Cube Offset">
- <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/Screenshot/CircleRotation.gif"
-      alt="Circle Gradual">
+      alt="Box Rotation">
+ <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/CircleRotation.gif"
+      alt="Circle Rotation">
 </div>
 
 ## Usage
