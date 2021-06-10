@@ -35,7 +35,7 @@
       alt="Loading Circle flip">
  <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/BoxRotation.gif"
       alt="Loading Cube Offset">
- <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/CircleRotation.gif"
+ <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/Screenshot/CircleRotation.gif"
       alt="Circle Gradual">
 </div>
 
