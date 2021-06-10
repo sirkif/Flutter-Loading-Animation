@@ -28,17 +28,6 @@
       alt="Circle Gradual">
 </div>
 
-### Loading: Cube Opacity | Box Rotation | Circle Rotation.
-
-<div align="center" width="100%">
-  <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/CubeOpacity.gif"
-      alt="Cube Opacity">
- <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/BoxRotation.gif"
-      alt="Box Rotation">
- <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/CircleRotation.gif"
-      alt="Circle Rotation">
-</div>
-
 ## Usage
 
 I made the <strong>Flutter</strong> animation slower to make your eyes recognize the animation.
