@@ -13,7 +13,7 @@
       alt="Circle Opacity">
  <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/CircleColors.gif"
       alt="Circle Colors">
- <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/CapsuleSpacing.gif"
+ <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/LoadingCapsuleSpacing.gif"
       alt="Capsule Spacing">
 </div>
 
