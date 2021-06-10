@@ -10,7 +10,7 @@ class CubeOpacity extends StatefulWidget {
 }
 
 class _CubeOpacityState extends State<CubeOpacity>
-    with TickerProviderStateMixin {
+    with SingleTickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
