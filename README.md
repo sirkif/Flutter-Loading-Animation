@@ -31,11 +31,11 @@
 ### Loading: Cube Opacity | Box Rotation | Circle Rotation.
 
 <div align="center" width="100%">
-  <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/LoadingCubeOpacity.gif"
+  <img width="30%" src="https://github.com/adamkif/Flutter-Loading-Animation/blob/master/Screenshot/LoadingCubeOpacity.gif"
       alt="Cube Opacity">
- <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/LoadingBoxRotation.gif"
+ <img width="30%" src="https://github.com/adamkif/Flutter-Loading-Animation/blob/master/Screenshot/LoadingBoxRotation.gif"
       alt="Box Rotation">
- <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/LoadingCircleRotation.gif"
+ <img width="30%" src="https://github.com/adamkif/Flutter-Loading-Animation/blob/master/Screenshot/LoadingCircleRotation.gif"
       alt="Circle Rotation">
 </div>
 
