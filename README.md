@@ -28,7 +28,7 @@
       alt="Circle Gradual">
 </div>
 
-### Loading: Cube Opacity | Box Rotation | Circle Rotation.
+### Loading: Cube Opacity | Box Rotation | Circle Rotation
 
 <div align="center" width="100%">
   <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/CubeOpacity.gif"
