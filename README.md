@@ -9,9 +9,9 @@
 ### Loading: Circle Opacity | Circle Colors | Capsule Spacing.
 
 <div align="center" width="100%">
- <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/CircleOpacity.gif"
+ <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/LoadingCircleOpacity.gif"
       alt="Circle Opacity">
- <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/CircleColors.gif"
+ <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/LoadingCircleColors.gif"
       alt="Circle Colors">
  <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/LoadingCapsuleSpacing.gif"
       alt="Capsule Spacing">
@@ -20,22 +20,22 @@
 ### Loading: Circle Flip | Cube Offset | Circle Gradual.
 
 <div align="center" width="100%">
-  <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/CircleFlip.gif"
+  <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/LoadingCircleFlip.gif"
       alt="Circle flip">
- <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/CubeOffset.gif"
+ <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/LoadingCubeOffset.gif"
       alt="Cube Offset">
- <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/CircleGradual.gif"
+ <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/LoadingCircleGradual.gif"
       alt="Circle Gradual">
 </div>
 
 ### Loading: Cube Opacity | Box Rotation | Circle Rotation.
 
 <div align="center" width="100%">
-  <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/CubeOpacity.gif"
+  <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/LoadingCubeOpacity.gif"
       alt="Cube Opacity">
- <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/BoxRotation.gif"
+ <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/LoadingBoxRotation.gif"
       alt="Box Rotation">
- <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/CircleRotation.gif"
+ <img width="30%" src="https://github.com/adamkif/SwiftUI-Loading-Animation/blob/main/Screenshot/LoadingCircleRotation.gif"
       alt="Circle Rotation">
 </div>
 
